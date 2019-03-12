@@ -1,0 +1,186 @@
+{% comment %}
+<!--
+
+===============================================================================
+ 
+Wild Nutrition - Henrietta Recommends - Products 3&4 Component
+Version: 1.0
+Copyright © 2019 Wild Nutrition
+https://www.wildnutrition.com
+ 
+Developer: Sean Porter
+ 
+===============================================================================
+
+-->
+{% endcomment %}
+
+<grid class="custom-content--padding wow slideInUp" data-wow-offset="20" columns=2 columns-s=1>
+  <c>
+    <grid columns=4 columns-s=1>
+      <c span=1 span-s=row>
+        <img class="margin-correction image-width" src="{{ section.settings.hr-leftproductimage | img_url: '751x751' }}">
+      </c>
+      <c span=2-4 span-s=row>
+        <h3 class="margin-correction line-height-fix regular margin-bottom-five">{{ section.settings.left-sub-heading }}</h3>
+        <h3 class="margin-correction line-height-fix margin-top-zero ">{{ section.settings.left-heading }}</h3>
+        <div class="line-limit margin-zero">
+          {{ section.settings.hr-leftcontent }}
+        </div>
+        <a class="small-link m-75" href="../{{ section.settings.hr-readmore-left }}">{{ section.settings.hr-readmorelabel-left }}</a>
+        <hr class="custom-m">
+      <grid columns=4 columns-s=1>
+              <c span=1 class="v-center">
+                <span class="product-price margin-zero">£{{ section.settings.variant-price-left }}</span>
+              </c>
+              <c span=2-4>
+                <form class="margin-zero has-text-right" method="post" action="/cart/add" data-productid="{{ section.settings.left-product-id }}"> 
+          <input type="hidden" name="id" data-productid="{{ section.settings.left-product-id }}" value="{{ section.settings.left-variant-id }}">
+            <input type="submit" value="Add to basket" class="btn btn-width margin-zero">
+          </form>
+              </c>
+        </grid>
+      </c>
+    </grid>
+  </c>
+  <c>
+    <grid columns=4 columns-s=1>
+      <c span=1 span-s=row>
+        <img class="margin-correction image-width" src="{{ section.settings.hr-rightproductimage | img_url: '751x751' }}">
+      </c>
+      <c span=2-4 span-s=row>
+        <h3 class="margin-correction line-height-fix regular margin-bottom-five">{{ section.settings.right-sub-heading }}</h3>
+        <h3 class="margin-correction line-height-fix margin-top-zero ">{{ section.settings.right-heading }}</h3>
+        <div class="line-limit margin-zero">
+          {{ section.settings.hr-rightcontent }}
+        </div>
+        <a class="small-link m-75" href="../{{ section.settings.hr-readmore-right }}">{{ section.settings.hr-readmorelabel-right }}</a>
+        <hr class="custom-m">
+      <grid columns=4 columns-s=1>
+              <c span=1 class="v-center">
+                <span class="product-price margin-zero">£{{ section.settings.variant-price-right }}</span>
+              </c>
+              <c span=2-4>
+                <form class="margin-zero has-text-right" method="post" action="/cart/add" data-productid="{{ section.settings.right-product-id }}"> 
+          <input type="hidden" name="id" data-productid="{{ section.settings.right-product-id }}" value="{{ section.settings.right-variant-id }}">
+            <input type="submit" value="Add to basket" class="btn btn-width margin-zero">
+          </form>
+              </c>
+        </grid>
+      </c>
+    </grid>
+  </c>
+</grid>
+
+{% schema %}
+  {
+    "name": "Products 3 & 4",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "hr-leftproductimage",
+        "label": "Left product - Image",
+        "info": "Change product image here"
+      },
+    {
+        "type": "text",
+        "id": "left-sub-heading",
+        "label": "Left product - Sub-Heading",
+    "default": "Rich text"
+      },
+    {
+        "type": "text",
+        "id": "left-heading",
+        "label": "Left product - Heading",
+    "default": "Rich text"
+      },    
+    {
+        "id": "hr-leftcontent",
+        "type": "richtext",
+        "label": "Left content - Paragraph",
+      "info": "To add a new link, type some text and highlight it, then click the link symbol above. To edit link, click the link and then click the edit button which appears. You can also make text bold or italic by using the button above.",
+        "default": "<p>Add your text here</p>"
+      },
+    {
+        "id": "hr-readmore-left",
+        "type": "text",
+        "label": "Read more - link URL",
+    "info" : "Format link as per example: products/total-cleanse-programme"
+      },
+      {
+        "id": "hr-readmorelabel-left",
+        "type": "text",
+        "label": "Read more link text"
+      },    
+    {
+    "id": "variant-price-left",
+    "type": "text",
+    "label" : "Enter product price"
+    },  
+    {
+    "id": "left-product-id",
+    "type": "number",
+    "label" : "Enter product ID",
+    "info" : "Do not touch"
+    },
+    {
+    "id": "left-variant-id",
+    "type": "number",
+    "label" : "Enter variant ID",
+    "info" : "Do not touch"
+    },
+    {
+        "type": "image_picker",
+        "id": "hr-rightproductimage",
+        "label": "Right product - Image",
+        "info": "Change product image here"
+      },
+    {
+        "type": "text",
+        "id": "right-sub-heading",
+        "label": "Right product - Sub-Heading",
+    "default": "Rich text"
+      },
+    {
+        "type": "text",
+        "id": "right-heading",
+        "label": "Right product - Heading",
+    "default": "Rich text"
+      },    
+    {
+        "id": "hr-rightcontent",
+        "type": "richtext",
+        "label": "Right content - Paragraph",
+      "info": "To add a new link, type some text and highlight it, then click the link symbol above. To edit link, click the link and then click the edit button which appears. You can also make text bold or italic by using the button above.",
+        "default": "<p>Add your text here</p>"
+      },
+    {
+        "id": "hr-readmore-right",
+        "type": "text",
+        "label": "Read more - link URL"
+      },
+      {
+        "id": "hr-readmorelabel-right",
+        "type": "text",
+        "label": "Read more link text"
+      },    
+    {
+    "id": "variant-price-right",
+    "type": "text",
+    "label" : "Enter product price"
+    },  
+    {
+    "id": "right-product-id",
+    "type": "number",
+    "label" : "Enter product ID",
+    "info" : "Do not touch"
+    },
+    {
+    "id": "right-variant-id",
+    "type": "number",
+    "label" : "Enter variant ID",
+    "info" : "Do not touch"
+    } 
+    ]
+  }
+{% endschema %}

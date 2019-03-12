@@ -1,0 +1,93 @@
+{% comment %}
+<!--
+
+===============================================================================
+ 
+Wild Nutrition - Henrietta Recommends - Master Page & CSS
+Version: 1.0
+Copyright © 2019 Wild Nutrition
+https://www.wildnutrition.com
+ 
+Developer: Sean Porter
+ 
+===============================================================================
+
+-->
+{% endcomment %}
+
+{{ 'raster.css' | asset_url | stylesheet_tag }} 
+{{ 'animate.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .margin-correction { 
+	display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.7rem;
+}
+  .line-height-fix {
+  	line-height: 17.99px !important;
+}
+  grid { 
+	grid-column-gap: 50px;
+    grid-row-gap: 25px;
+}
+  hr {
+  	margin: 0;
+}
+  .regular {
+  	  font-family: 'fs_elliotregular', sans-serif !important;
+      font-weight: 300 !important;
+} 
+  .btn-width {
+  	min-width: 100% !important;
+}
+  .ajaxified-cart-feedback {
+    display: none !important;
+} 
+  .image-width {
+  	min-width: 153px;
+} 
+  .t-minus-twentyfive {
+  	margin-top: -25px;
+}
+  .line-limit {
+  	overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6; /* number of lines to show */
+    line-height: X;        /* fallback */
+    max-height: X*N;       /* fallback */
+}
+  .small-link {
+  	font-size: 16px;
+}
+  .v-center {
+    display: flex;
+    align-items: center;
+}
+  .m-75 {
+    display: block;
+  	margin-top: 7.5px;
+  	margin-bottom: 7.5px;
+}
+  .custom-m {
+  	margin-top: 14.5px;
+    margin-bottom: 25.5px;
+}
+</style>
+
+<div class="page-content rte">  
+	{% section 'henrietta-recommends-slider' %}
+	{% section 'henrietta-recommends--block-one' %}
+  	<hr>
+  	{% section 'henrietta-recommends--products-one' %}
+  	{% section 'henrietta-recommends--products-two' %}
+  	<br>
+</div>
+
+{{ 'wow.min.js' | asset_url | script_tag }}
+<script>
+	new WOW().init();
+</script>
+

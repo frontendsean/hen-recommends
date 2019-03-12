@@ -1,0 +1,66 @@
+{% comment %}
+<!--
+
+===============================================================================
+ 
+Wild Nutrition - Henrietta Recommends - Introduction Component
+Version: 1.0
+Copyright © 2019 Wild Nutrition
+https://www.wildnutrition.com
+ 
+Developer: Sean Porter
+ 
+===============================================================================
+
+-->
+{% endcomment %}
+
+<grid class="custom-content--padding slideInUp" columns=2 columns-s=1>
+  <c>
+    {{ section.settings.hr-leftheading }}
+  </c>
+  <c>
+    <grid columns=4 columns-s=1>
+      <c span=1 span-s=row>
+        <img class="margin-correction image-width" src="{{ section.settings.hr-rightimage | img_url: '450x450' }}">
+      </c>
+      <c span=2-4 span-s=row>
+        <h3 class="margin-correction line-height-fix">{{ section.settings.heading }}</h3>
+        {{ section.settings.hr-rightcontent }}
+      </c>
+    </grid>
+  </c>
+</grid>
+
+{% schema %}
+  {
+    "name": "Introduction",
+    "settings": [
+      {
+        "id": "hr-leftheading",
+        "type": "richtext",
+        "label": "Left content - Paragraph",
+        "default": "<p>Add your text here</p>"
+      },
+      {
+        "type": "image_picker",
+        "id": "hr-rightimage",
+        "label": "Right content - Image",
+        "info": "Used for Wild Subscribers logo"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Right content - Heading",
+        "default": "Rich text"
+      },		
+	  {
+        "id": "hr-rightcontent",
+        "type": "richtext",
+        "label": "Right content - Paragraph",
+	    "info": "To add a new link, type some text and highlight it, then click the link symbol above. To edit link, click the link and then click the edit button which appears. You can also make text bold or italic by using the button above.",
+        "default": "<p>Add your text here</p>"
+      }	
+    ]
+  }
+{% endschema %}
